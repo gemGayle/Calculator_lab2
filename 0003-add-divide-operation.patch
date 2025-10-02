@@ -1,0 +1,52 @@
+From b18acaef0188cdf4509df23041e1e3c8df8d53cd Mon Sep 17 00:00:00 2001
+From: Olexandr Andreev <ol.andreev24@gmail.com>
+Date: Thu, 2 Oct 2025 15:05:00 +0300
+Subject: [PATCH] add divide opeartion
+
+---
+ calculator.cpp | 12 +++++++-----
+ calculator.h   |  1 +
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/calculator.cpp b/calculator.cpp
+index e4fa4fd..17e0264 100644
+--- a/calculator.cpp
++++ b/calculator.cpp
+@@ -2,11 +2,7 @@
+ 
+ int Calculator::Add (double a, double b)
+ {
+-<<<<<<< HEAD
+-    return a + b;
+-=======
+-	return a + b + 0.5;
+->>>>>>> 4ad40a3 (fix truncation error)
++    return a + b + 0.5;
+ }
+ 
+ int Calculator::Sub (double a, double b)
+@@ -18,3 +14,9 @@ int Calculator::Mul (double a, double b)
+ {
+     return a * b + 0.5;
+ }
++
++int Calculator::Div (double a, double b)
++{
++    if (b == 0) return 0;
++    return a / b;
++}
+diff --git a/calculator.h b/calculator.h
+index e0efded..ad1057a 100644
+--- a/calculator.h
++++ b/calculator.h
+@@ -7,6 +7,7 @@ class Calculator
+ 	int Add (double, double);
+         int Sub (double, double);
+         int Mul (double, double);
++	int Div (double, double);
+ };
+ 
+ #endif//CALCULATOR_H
+-- 
+2.51.0
+
